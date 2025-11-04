@@ -10,6 +10,7 @@ html {
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
 }
 body {
   background: rgb(0, 0, 29);
@@ -71,32 +72,32 @@ header {
   animation: loop 2s infinite alternate ease-in-out;
   animation-delay: 0.3s;
 }
-.hero-content-img{
-    display: flex;
-    justify-content: center;
-    gap: 35px;
+.hero-content-img {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
 }
-.hero-content-img img{
-    width: 15%;
-    box-shadow: 1px 1px 10px white;
-    padding: 10px;
-    border-radius: 50%;
-    justify-content: center;
+.hero-content-img img {
+  width: 15%;
+  box-shadow: 1px 1px 10px white;
+  padding: 10px;
+  border-radius: 50%;
+  justify-content: center;
 }
-.hero-content-img img:nth-child(1){
-    animation-delay: 0.3s;
+.hero-content-img img:nth-child(1) {
+  animation-delay: 0.3s;
 }
-.hero-content-img img:nth-child(2){
-    animation-delay: 0.6s;
+.hero-content-img img:nth-child(2) {
+  animation-delay: 0.6s;
 }
-.hero-content-img img:nth-child(3){
-    animation-delay: 0.9s;
+.hero-content-img img:nth-child(3) {
+  animation-delay: 0.9s;
 }
-.hero-content-img img:nth-child(4){
-    animation-delay: 1.2s;
+.hero-content-img img:nth-child(4) {
+  animation-delay: 1.2s;
 }
-.hero-content-img img:nth-child(5){
-    animation-delay: 1.5s;
+.hero-content-img img:nth-child(5) {
+  animation-delay: 1.5s;
 }
 @keyframes loop {
   from {
@@ -131,28 +132,32 @@ header {
   animation: teks 7s infinite steps(1);
 }
 @keyframes teks {
-  0%, 25% {
+  0%,
+  25% {
     content: "Web Developer";
     color: var(--main);
     text-shadow: 1px 1px 20px var(--main);
   }
-  25%, 50% {
+  25%,
+  50% {
     content: "UI/UX Designer";
     color: rgb(255, 0, 200);
     text-shadow: 1px 1px 20px rgb(255, 0, 200);
   }
-  50%, 75% {
+  50%,
+  75% {
     content: "Type Writer";
     color: red;
     text-shadow: 1px 1px 20px red;
   }
-  75%, 99% {
+  75%,
+  99% {
     content: "Video Editor";
     color: orange;
     text-shadow: 1px 1px 20px orange;
   }
-  100%{
-    content: 'Web Developer';
+  100% {
+    content: "Web Developer";
     color: var(--main);
     text-shadow: 1px 1px 20px var(--main);
   }
@@ -207,18 +212,29 @@ header {
   padding: 8px;
   border-radius: 5px;
   background: transparent;
-  border: 1px solid var(--main);
+  border: 1px solid red;
 }
-main{
+main {
   color: var(--text);
   padding: 20px 75px 0px 75px;
 }
-.about{
+.about {
   height: 100dvh;
   padding-top: 30px;
   padding-bottom: 30px;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: fadeInSlide 5s ease forwards;
+  animation-timeline: view(); 
+  animation-range: entry 50%;
 }
-.about-title h1{
+@keyframes fadeInSlide {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.about-title h1 {
   background-color: rgb(0, 0, 119);
   width: fit-content;
   padding: 7px;
@@ -226,65 +242,61 @@ main{
   color: rgb(68, 68, 253);
   border-radius: 7px;
 }
-.about-content-container{
+.about-content-container {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 70px;
 }
-.about-content{
+.about-content {
   display: flex;
   align-items: center;
   gap: 50px;
 }
-.about-image{
+.about-image {
   width: 30%;
 }
-.about-image img{
-  width: 95%;
+.about-image img {
+  width: 100%;
   height: auto;
-  border-radius: 10px;
-  opacity: 0.5;
-}
-.about-image img:hover{
-  transition: all 0.6ease;
+  border-radius: 15px;
   opacity: 1;
 }
-.about-text{
+.about-text {
   display: flex;
   flex-direction: column;
   gap: 20px;
   width: 70%;
 }
-.about-text h1{
-  font-family: 'Momo Signature', sans-serif;
+.about-text h1 {
+  font-family: "Momo Signature", sans-serif;
   font-weight: 900;
   font-size: 2.3rem;
   text-shadow: -4px 4px 5px rgba(255, 255, 255, 0.5);
 }
-.about-text h2{
-  font-family: 'Poppins', sans-serif;
+.about-text h2 {
+  font-family: "Poppins", sans-serif;
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
-.about-text p{
+.about-text p {
   font-size: 0.8rem;
-  text-align: justify;
+  text-align: left;
   line-height: 1.6;
 }
-.about-text span{
+.about-text span {
   color: blue;
   font-size: 2.5rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 700;
 }
-.about-card-container{
+.about-card-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 25px;
 }
-.about-card{
+.about-card {
   display: flex;
   align-items: center;
   gap: 20px;
@@ -294,12 +306,21 @@ main{
   border-radius: 7px;
   box-shadow: -2px 2px 2px 1px rgb(107, 107, 107);
 }
-.about-card img{
+.about-card img {
   width: 20%;
   height: auto;
 }
-.about-card h3{
+.about-card h3 {
   font-size: 1.5rem;
 }
-
-
+.about-button {
+  margin-top: 15px;
+}
+.about-button a {
+  padding: 10px;
+  text-decoration: none;
+  border: 1px solid red;
+  color: var(--text);
+  border-radius: 5px;
+  font-weight: 700;
+}
